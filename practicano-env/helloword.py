@@ -3,7 +3,7 @@ import os
 import serial 
 
 try:
-    arduino = serial.Serial('/dev/cu.usbserial-1130', 9600)
+    arduino = serial.Serial('/dev/cu.usbserial-140', 9600)
     print('Conectado a Arduino por las nalgas')
     fechahora = datetime.now()
     opcion = '0'
@@ -33,4 +33,4 @@ try:
     print('Motor apagado broh')
     arduino.close()
 except:
-    print('No se pudo conectar a Arduino')
+    print('No se pudo conectar a Arduino', arduino.exception())
